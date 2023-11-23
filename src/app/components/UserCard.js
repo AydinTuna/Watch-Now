@@ -1,8 +1,4 @@
-
-export default function Card({ user, pagetype }) {
-
-    //console.log(user)
-
+export default async function Card({ user }) {
     const greeting = user?.name ? (
         <div className="flex flex-col items-center p-6 bg-white rounded-lg font-bold text-5xl text-black">
             Hello {user?.name}!
@@ -15,10 +11,10 @@ export default function Card({ user, pagetype }) {
     //     </div>
     // ) : null
 
-
     return (
         <section className="flex flex-col gap-4">
             {greeting}
+            {/* {videoList} */}
         </section>
     )
 }

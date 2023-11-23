@@ -6,8 +6,8 @@ import AuthProvider from './context/AuthProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'NextAuth Tutorial',
-  description: 'Learn NextAuth.js by Dave Gray',
+  title: 'Watch Now',
+  description: 'Why are you procrastinating? Just Watch Now',
 }
 
 export default function RootLayout({
