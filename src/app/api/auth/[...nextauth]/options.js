@@ -2,6 +2,16 @@ import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from "next-auth/providers/credentials"
 
 export const options = {
+    // Customize authentication pages
+    pages: {
+        signIn: "/login", // Redirect users to "/login" when signing in
+    },
+    // Configure session management
+    session: {
+        strategy: "jwt", // Use JSON Web Tokens (JWT) for session management
+    },
+    // added secret key
+    secret: process.env.NEXTAUTH_SECRET,
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_ID,
@@ -27,7 +37,8 @@ export const options = {
                 if (credentials?.username === user.name && credentials?.password === user.password) {
                     return user
                 } else return null
-            }
+            },
+
         })
     ],
 };
